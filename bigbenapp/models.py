@@ -17,7 +17,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=upload_location, null=False, blank=False)
-    slug = models.SlugField(null=True)
+    slug = models.SlugField(null=True, blank=True)
 
 
     def __str__(self):
