@@ -1,0 +1,43 @@
+{% extends "app_folder/base.html" %}
+
+{% block content %}
+<h2>Mes rdv</h2>
+    <form method="POST">{% csrf_token %}
+        <table className="table table-striped">
+            <thead>
+                    <tr>
+                        <th></th>
+                      <th>Blaze</th>
+                      <th>eMail</th>
+                      <th>Date</th>
+                        <th>Heure</th>
+                        <th>Confirmé</th>
+                    </tr>
+            </thead>
+            <tbody>
+        {% for content in appointments %}
+                      <tr key={{content.id}}>
+                          <td>
+                              <input type="checkbox" value="{{ content.id }}" name="choices">
+                          </td>
+                        <td>{{content.blaze}}</td>
+                        <td>{{content.email}}</td>
+                        <td>{{content.date}}</td>
+                          <td>{{content.time}}</td>
+                          {% if content.confirmed %}
+                            <td>
+                                <img src="../../static/app_folder/static/img/check.svg">
+                            </td>
+                          {% else %}
+                          <td>
+                               <img src="../../static/app_folder/static/img/x.svg">
+                          </td>
+                          {% endif %}
+                      </tr>
+        {% endfor %}
+            </tbody>
+
+        </table>
+        <input type="submit" class="btn btn-info" value="Confirmer">
+    </form>
+{% endblock content %}

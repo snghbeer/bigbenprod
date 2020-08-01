@@ -1,0 +1,14 @@
+{% extends "app_folder/base.html" %}
+
+
+{% block content %}
+<h1>Book ton rdv ici le sang</h1>
+
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-info" value="Post">
+</form>
+
+
+
+{% endblock content %}

@@ -1,0 +1,148 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 20px;
+  color: #A9A9A9;
+}
+
+body {
+  background-image: url("static/img/papyrus-dark.png");
+}
+
+.dark{
+    background-color: #52585f;
+}
+
+.container-fluid{
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.container{
+    max-width:1200;
+}
+
+.tbl{
+    margin: 60px;
+}
+
+div.ui-menu li {
+    list-style:none;
+    background-image:none;
+    background-repeat:none;
+    background-position:0;
+}
+ul{
+    list-style-type:none;
+    padding:0px;
+    margin:0px;
+}
+
+.alert{
+  margin-top: 40px;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.carousel{
+    min-width:1200px;
+
+}
+
+.carousel-inner{
+  max-width: 1200;
+  width:100%;
+  box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 black inset;
+
+}
+
+.carousel-item {
+    max-height:800;
+    min-height:800;
+}
+
+.carousel-indicators {
+    position: absolute;
+}
+
+ .carousel-indicators .item .active  {  
+      background: transparent;
+ }
+
+ .carousel-indicators .item .active .img {
+        opacity: 0.7;
+  }
+
+.card{
+    max-width:800;
+    max-height: 900;
+    height:100%;
+    margin-top: 50px;
+
+}
+
+.card-img-top{
+    max-width:800;
+    max-height:800;
+}
+
+.card-body{
+    margin-top: -30;
+    max-height: 120;
+}
+
+label{
+  color: #A9A9A9;
+}
+
+table{
+  background-color:white;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+ }
+
+ td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+

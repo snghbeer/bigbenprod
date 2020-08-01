@@ -1,0 +1,12 @@
+{% extends "app_folder/base.html" %}
+{%load crispy_forms_tags %}
+
+{% block content %}
+<div class="card" >
+  <img class="card-img-top" src="{{ object.image.url }}" alt="Card image cap">
+  <div class="card-body">
+      <h5 class="card-title">{{ object.title }}</h5>
+      <p class="card-text">{{ object.content }}</p>
+  </div>
+</div>
+{% endblock content %}
