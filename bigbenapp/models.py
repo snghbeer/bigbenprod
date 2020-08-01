@@ -17,6 +17,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=upload_location, null=False, blank=False)
+    slug = models.SlugField(null=True)
 
 
     def __str__(self):
@@ -24,10 +25,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
-
-
-#class DateTimeTest(models.Model):
- #   date = models.DateTimeField(null=True, blank=True)
 
 class Appointment(models.Model):
     blaze = models.CharField(max_length=20)
