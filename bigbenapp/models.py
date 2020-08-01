@@ -1,11 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django.utils.text import slugify
-from django.db.models.signals import pre_save, post_delete
-from django.dispatch import receiver
 from django.shortcuts import reverse, redirect
-import PIL
 
 # Create your models here.
 
@@ -27,11 +23,11 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('index')
+        return reverse('post-detail', kwargs={'pk': self.pk})
 
 
-class DateTimeTest(models.Model):
-    date = models.DateTimeField(null=True, blank=True)
+#class DateTimeTest(models.Model):
+ #   date = models.DateTimeField(null=True, blank=True)
 
 class Appointment(models.Model):
     blaze = models.CharField(max_length=20)
