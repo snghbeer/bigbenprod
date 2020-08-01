@@ -9,13 +9,13 @@ from django.views.decorators.csrf import csrf_protect
 
 class DetailPostView(DetailView):
     model = Post
-    template_name = 'app_folder/post_url.html'
+    template_name = 'bigbenapp/post_url.html'
     context_object_name = 'post-detail'
 
 class CreatePostView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content', 'image']
-    template_name = 'app_folder/createpost_url.html'
+    template_name = 'bigbenapp/createpost_url.html'
     context_object_name = 'createpost'
 
     def get_absolute_url(self):
@@ -33,7 +33,7 @@ def about(request):
     context = {
         'posts': Post.objects.all()
     }
-    return render(request, 'app_folder/index.html',  context)
+    return render(request, 'bigbenapp/index.html',  context)
 
 
 def create_post(request):
@@ -50,7 +50,7 @@ def create_post(request):
 
         context['form'] = form
 
-        return render(request, 'app_folder/create_post.html', context)
+        return render(request, 'bigbenapp/create_post.html', context)
 
 
 @csrf_protect
@@ -66,22 +66,12 @@ def create_appointment(request):
         context = {
             'form': form,
             }
-        template = 'app_folder/about.html'
+        template = 'bigbenapp/about.html'
         return render(request, template, context)
-
-
-def confirm_appointment(request):
-    if request.method == 'POST':
-        appointments = request.POST.getlist('choices')
-        for app_id in appointments:
-            obj = Appointment.objects.get(id=app_id)
-            obj.confirmed = True
-            obj.save()
-        return redirect('rdv')
 
 @csrf_protect
 def rdv(request):
-    if request.method == 'POST':
+    if request.method == 'POST': #confirm an appointment
         appointments = request.POST.getlist('choices')
         for app_id in appointments:
             obj = Appointment.objects.get(id=app_id)
@@ -92,4 +82,4 @@ def rdv(request):
     context = {
         'appointments': Appointment.objects.all()
     }
-    return render(request, 'app_folder/rdv.html',  context)
+    return render(request, 'bigbenapp/rdv.html',  context)
