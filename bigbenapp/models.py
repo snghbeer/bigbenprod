@@ -30,16 +30,6 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
 
-@receiver(post_delete, sender=Post)
-def submission_delete(sender, instance, **kwargs):
-    instance.image.delete(False)
-
-def pre_save_post_receiver(sender, instance, *args, **kwargs):
-    if not instance.slug:
-        instance.slug = slugify(instance.author.username + "-" + instance.title)
-pre_save.connect(pre_save_post_receiver, sender=Post)
-
-
 class DateTimeTest(models.Model):
     date = models.DateTimeField(null=True, blank=True)
 
