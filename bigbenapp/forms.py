@@ -1,5 +1,5 @@
 from django import forms
-from bigbenapp.models import Post, Appointment, DateTimeTest
+from bigbenapp.models import Post, Appointment
 
 class CreatePostForm(forms.ModelForm):
     class Meta:
@@ -18,18 +18,6 @@ class TextInput(forms.TextInput):
     input_type = 'blaze'
 
 
-#
-
-class DateForm(forms.Form):
-    date = forms.DateTimeField(widget=DateInput)
-
-class DateModelForm(forms.ModelForm):
-    class Meta:
-        model = DateTimeTest
-        fields = {'date', }
-        widget = {'date': DateInput()}
-
-#
 
 class ApointmentForm(forms.Form):
     blaze = forms.CharField(widget=TextInput)
