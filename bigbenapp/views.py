@@ -20,13 +20,13 @@ from chromedriver_py import binary_path
 CHROME_PATH = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 WINDOW_SIZE = "1920,1080"
 
-PATH = "../chromedriver.exe"
+PATH = "C:\Program Files (x86)\chromedriver.exe"
 url = "https://www.instagram.com/"
 
 
 class Instabot():
     def __init__(self, username, pw, appointment):
-        self.driver = webdriver.Chrome(executable_path=PATH)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.username = username
         self.url = "https://www.instagram.com/"
 
