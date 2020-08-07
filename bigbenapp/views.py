@@ -20,7 +20,7 @@ from chromedriver_py import binary_path
 CHROME_PATH = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 WINDOW_SIZE = "1920,1080"
 
-PATH = "../chromedriver"
+PATH = "../chromedriver.exe"
 url = "https://www.instagram.com/"
 
 
