@@ -13,24 +13,20 @@ from .secrets import pw
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
+
+from webdriver_manager.chrome import ChromeDriverManager
+from chromedriver_py import binary_path
 
 CHROME_PATH = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
 WINDOW_SIZE = "1920,1080"
 
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 url = "https://www.instagram.com/"
-#chrome_options = Options()
-#chrome_options.add_argument("--headless")
-#chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
-#chrome_options.binary_location = CHROME_PATH
 
 
 class Instabot():
     def __init__(self, username, pw, appointment):
-        self.driver = webdriver.Chrome(executable_path=PATH,
-                                       #chrome_options=chrome_options
-                                       )
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.username = username
         self.url = "https://www.instagram.com/"
 
