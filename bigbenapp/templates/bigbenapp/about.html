@@ -3,12 +3,23 @@
 
 {% block content %}
 <h1>Book ton rdv ici le sang</h1>
+<div class="content-section">
 
-<form method="POST" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn btn-info" value="Post">
-</form>
+    <p>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Book
+      </button>
+    </p>
 
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-info" value="Post">
+            </form>
+      </div>
+    </div>
+</div>
 
 
 {% endblock content %}

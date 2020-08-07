@@ -1,35 +1,54 @@
 {% extends "bigbenapp/base.html" %}
 
 {% block content %}
-<h1>Bienvenue dans mon monde</h1>
+<div class="section-content">
+    <h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
+    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+</div>
+<div class="centered-element">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Book
+    </button>
+</div>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div class="content-section">
 
-  <div class="carousel-inner">
-    {% for post in posts %}
-     {% if forloop.counter == 1 %}
-      <div class="carousel-item active" href="{% url 'post-detail' post.id%}">
-      {% else %}
-      <div class="carousel-item" href="{% url 'post-detail' post.id%}">
-      {% endif %}
-          <a href="{% url 'post-detail' post.id%}" target="_blank">
-        <img class="d-block w-100 img-fluid carousel-img" src="{{ post.image.url }}" alt="First slide">
-                    </a>
+        <section id="contact">
+			<div class="contact-section">
+			<div class="container">
+                 <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 form-line">
+                            <div class="form-group">
+                                <label for="id_blaze">@-Insta(complet)</label>
+                                <input type="blaze" class="form-control" name="blaze" required id="id_blaze">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_email">Mail pro/email</label>
+                                <input type="email" class="form-control" name="email" required id="id_email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="id_date">Date</label>
+                                <input type="date" class="form-control" name="date" required id="id_date">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_time">Heure</label>
+                                <input type="time" class="form-control" name="time" required id="id_time">
+                            </div>
+                            <input type="submit" class="btn btn-info" value="Post">
 
-      </div>
-        {% endfor %}
-
-      </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-
-
+                        </div>
+                    </div>
+				</form>
+			</div>
+            </div>
+		</section>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}

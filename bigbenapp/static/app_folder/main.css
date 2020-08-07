@@ -1,10 +1,12 @@
 h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
   color: #A9A9A9;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 body {
   background-image: url("static/img/papyrus-dark.png");
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 .dark{
@@ -56,13 +58,16 @@ ul{
   font-weight: 500;
 }
 
+.col-md-8{
+    position:absolute;
+}
+
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
+  margin-top: 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
-  margin-top: 40px;
-  margin-bottom: 20px;
 }
 
 
@@ -89,6 +94,10 @@ ul{
 
 }
 
+.centered-element{
+    text-align:center;
+}
+
 .carousel-item {
     max-height:800;
     min-height:800;
@@ -107,10 +116,8 @@ ul{
   }
 
 .card{
-    max-width:800;
     max-height: 900;
     height:100%;
-    margin-top: 50px;
 
 }
 
@@ -120,8 +127,7 @@ ul{
 }
 
 .card-body{
-    margin-top: -30;
-    max-height: 120;
+    margin-top: 10;
 }
 
 label{
@@ -146,3 +152,49 @@ tr:nth-child(even) {
 }
 
 
+/*Contact sectiom*/
+.content-header{
+  color:#fcc500;
+  font-size: 45px;
+}
+
+.section-content{
+  text-align: center;
+
+}
+.contact-section{
+  padding-top: 40px;
+}
+.contact-section .col-md-6{
+  width: 50%;
+}
+
+.form-line{
+  border-right: 1px solid #B29999;
+}
+
+.form-group{
+  margin-top: 10px;
+}
+label{
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.form-control{
+  font-size: 1.3em;
+  color: #080808;
+}
+textarea.form-control {
+    height: 135px;
+   /* margin-top: px;*/
+}
+
+.submit{
+  font-size: 1.1em;
+  float: right;
+  width: 150px;
+  background-color: transparent;
+  color: #fff;
+
+}
