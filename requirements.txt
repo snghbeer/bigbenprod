@@ -7,7 +7,7 @@ cffi==1.14.0
 chardet==3.0.4
 chromedriver==2.24.1
 chromedriver-binary==84.0.4147.30.0
-chromedriver-py==85.0.4183.38
+chromedriver-py==84.0.4147.30
 colorama==0.4.3
 configparser==5.0.0
 crayons==0.3.1
