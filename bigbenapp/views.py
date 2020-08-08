@@ -22,7 +22,7 @@ chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
 opts = ChromeOptions()
 opts.add_argument('--disable-gpu')
 opts.add_argument('--no-sandbox')
-opts.add_argument('--headless')
+#opts.add_argument('--headless')
 opts.binary_location = chrome_bin
 url = "https://www.instagram.com/"
 
