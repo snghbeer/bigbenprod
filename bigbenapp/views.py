@@ -16,11 +16,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from webdriver_manager.chrome import ChromeDriverManager
-from chromedriver_py import binary_path
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
 opts = ChromeOptions()
+opts.add_argument('--disable-gpu')
+opts.add_argument('--no-sandbox')
+opts.add_argument('--headless')
 opts.binary_location = chrome_bin
 url = "https://www.instagram.com/"
 
