@@ -18,22 +18,20 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from chromedriver_py import binary_path
 
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = webdriver.ChromeOptions()
-chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument("--no-sandbox")
 
-CHROME_PATH = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
-WINDOW_SIZE = "1920,1080"
-
+chrome_options.binary_location = GOOGLE_CHROME_PATH
 PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'chromedriver/chromedriver.exe')
 url = "https://www.instagram.com/"
 
 
 class Instabot():
     def __init__(self, username, pw, appointment):
-        self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER PATH"), chrome_options=chrome_options)
+        self.driver = webdriver.Chrome(executable_path= CHROMEDRIVER_PATH, chrome_options= chrome_options)
         self.username = username
         self.url = "https://www.instagram.com/"
 
