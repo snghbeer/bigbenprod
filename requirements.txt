@@ -11,7 +11,7 @@ chromedriver-py==84.0.4147.30
 colorama==0.4.3
 configparser==5.0.0
 crayons==0.3.1
-cryptography==2.9.2
+cryptography==3.2
 defusedxml==0.6.0
 distlib==0.3.0
 dj-database-url==0.5.0
